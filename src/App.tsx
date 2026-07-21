@@ -63,16 +63,16 @@ function App() {
       setPhase('work')
       setSecondsLeft(WORK_SECONDS)
     } else if (phase === 'work') {
-      announce('20秒経過')
+      announce('休憩スタート')
       setPhase('rest')
       setSecondsLeft(REST_SECONDS)
     } else if (phase === 'rest') {
       if (currentSet >= TOTAL_SETS) {
-        announce('0秒、休憩終了。お疲れ様でした。')
+        announce('休憩終了。お疲れ様でした。')
         setPhase('finished')
         setIsRunning(false)
       } else {
-        announce('0秒、休憩終了')
+        announce('休憩終了')
         setCurrentSet((s) => s + 1)
         setPhase('work')
         setSecondsLeft(WORK_SECONDS)
